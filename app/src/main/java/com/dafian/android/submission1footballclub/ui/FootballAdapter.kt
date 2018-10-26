@@ -17,8 +17,8 @@ class FootballAdapter(
 
     class FootballHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private var ivLogo: ImageView = itemView.findViewById(FootballUI.idLogo)
-        private var tvName: TextView = itemView.findViewById(FootballUI.idName)
+        private var ivLogo: ImageView = itemView.findViewById(FootballRowUI.idLogo)
+        private var tvName: TextView = itemView.findViewById(FootballRowUI.idName)
 
         fun bindItem(item: FootballClub, listener: (FootballClub) -> Unit) {
             tvName.text = item.name
@@ -30,7 +30,7 @@ class FootballAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FootballHolder {
-        return FootballHolder(FootballUI().createView(AnkoContext.create(context, parent)))
+        return FootballHolder(FootballRowUI().createView(AnkoContext.create(context, parent)))
     }
 
     override fun getItemCount(): Int {

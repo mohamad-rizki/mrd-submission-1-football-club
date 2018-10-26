@@ -7,10 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.dafian.android.submission1footballclub.GlideApp
 import com.dafian.android.submission1footballclub.data.FootballClub
-import org.jetbrains.anko.imageView
-import org.jetbrains.anko.matchParent
-import org.jetbrains.anko.textView
-import org.jetbrains.anko.verticalLayout
+import org.jetbrains.anko.*
 
 class FootballDetailActivity : AppCompatActivity() {
 
@@ -22,10 +19,23 @@ class FootballDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         verticalLayout {
             lparams(width = matchParent, height = matchParent)
-            gravity = Gravity.CENTER_HORIZONTAL
-            ivLogo = imageView()
-            tvName = textView()
-            tvNote = textView()
+            padding = dip(16)
+
+            ivLogo = imageView {}.lparams(dip(80), dip(80)) {
+                gravity = Gravity.CENTER
+            }
+
+            tvName = textView {
+                gravity = Gravity.CENTER
+                textSize = sp(10).toFloat()
+            }.lparams(matchParent, wrapContent) {
+                topMargin = dip(8)
+                bottomMargin = dip(8)
+            }
+
+            tvNote = textView {
+                gravity = Gravity.CENTER
+            }
         }
 
         val intent = intent

@@ -1,11 +1,12 @@
 package com.dafian.android.submission1footballclub.ui
 
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
 
-class FootballUI : AnkoComponent<ViewGroup> {
+class FootballRowUI : AnkoComponent<ViewGroup> {
 
     companion object {
         const val idLogo = 1
@@ -20,12 +21,14 @@ class FootballUI : AnkoComponent<ViewGroup> {
 
             imageView {
                 id = idLogo
-                layoutParams = LinearLayout.LayoutParams(dip(50), dip(50))
-            }
+            }.lparams(dip(50), dip(50))
 
             textView {
                 id = idName
+            }.lparams {
+                margin = dip(8)
                 layoutParams = LinearLayout.LayoutParams(matchParent, wrapContent)
+                gravity = Gravity.CENTER_VERTICAL
             }
         }
     }
