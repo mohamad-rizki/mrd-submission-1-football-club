@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.dafian.android.submission1footballclub.GlideApp
 import com.dafian.android.submission1footballclub.data.FootballClub
+import kotlinx.android.extensions.LayoutContainer
 import org.jetbrains.anko.AnkoContext
 
 class FootballAdapter(
@@ -15,7 +16,7 @@ class FootballAdapter(
     private val listener: (FootballClub) -> Unit
 ) : RecyclerView.Adapter<FootballAdapter.FootballHolder>() {
 
-    class FootballHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class FootballHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         private var ivLogo: ImageView = itemView.findViewById(FootballRowUI.idLogo)
         private var tvName: TextView = itemView.findViewById(FootballRowUI.idName)
@@ -23,7 +24,7 @@ class FootballAdapter(
         fun bindItem(item: FootballClub, listener: (FootballClub) -> Unit) {
             tvName.text = item.name
             item.image?.let { GlideApp.with(itemView.context).load(it).into(ivLogo) }
-            itemView.setOnClickListener {
+            containerView.setOnClickListener {
                 listener(item)
             }
         }
