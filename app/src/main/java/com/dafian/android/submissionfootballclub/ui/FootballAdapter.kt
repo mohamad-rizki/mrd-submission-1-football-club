@@ -1,4 +1,4 @@
-package com.dafian.android.submission1footballclub.ui
+package com.dafian.android.submissionfootballclub.ui
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.dafian.android.submission1footballclub.GlideApp
-import com.dafian.android.submission1footballclub.data.FootballClub
+import com.dafian.android.submissionfootballclub.GlideApp
+import com.dafian.android.submissionfootballclub.data.FootballClub
 import kotlinx.android.extensions.LayoutContainer
 import org.jetbrains.anko.AnkoContext
 

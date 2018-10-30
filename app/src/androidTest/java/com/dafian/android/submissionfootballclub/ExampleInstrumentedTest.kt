@@ -1,4 +1,4 @@
-package com.dafian.android.submission1footballclub
+package com.dafian.android.submissionfootballclub
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

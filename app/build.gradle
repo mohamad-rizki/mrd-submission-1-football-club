@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.dafian.android.submission1footballclub"
+        applicationId "com.dafian.android.submissionfootballclub"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1

@@ -1,4 +1,4 @@
-package com.dafian.android.submission1footballclub
+package com.dafian.android.submissionfootballclub
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule

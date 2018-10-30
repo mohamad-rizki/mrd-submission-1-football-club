@@ -1,4 +1,4 @@
-package com.dafian.android.submission1footballclub.ui
+package com.dafian.android.submissionfootballclub.ui
 
 import android.view.Gravity
 import android.view.View

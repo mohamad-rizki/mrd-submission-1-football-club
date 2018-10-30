@@ -1,4 +1,4 @@
-package com.dafian.android.submission1footballclub.data
+package com.dafian.android.submissionfootballclub.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

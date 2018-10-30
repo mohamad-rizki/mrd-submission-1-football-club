@@ -1,4 +1,4 @@
-package com.dafian.android.submission1footballclub.ui.list
+package com.dafian.android.submissionfootballclub.ui.list
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -6,10 +6,10 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import com.dafian.android.submission1footballclub.R
-import com.dafian.android.submission1footballclub.data.FootballClub
-import com.dafian.android.submission1footballclub.ui.FootballAdapter
-import com.dafian.android.submission1footballclub.ui.detail.FootballDetailActivity
+import com.dafian.android.submissionfootballclub.R
+import com.dafian.android.submissionfootballclub.data.FootballClub
+import com.dafian.android.submissionfootballclub.ui.FootballAdapter
+import com.dafian.android.submissionfootballclub.ui.detail.FootballDetailActivity
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 

@@ -1,12 +1,12 @@
-package com.dafian.android.submission1footballclub.ui.detail
+package com.dafian.android.submissionfootballclub.ui.detail
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
-import com.dafian.android.submission1footballclub.GlideApp
-import com.dafian.android.submission1footballclub.data.FootballClub
+import com.dafian.android.submissionfootballclub.GlideApp
+import com.dafian.android.submissionfootballclub.data.FootballClub
 import org.jetbrains.anko.*
 
 class FootballDetailActivity : AppCompatActivity() {
