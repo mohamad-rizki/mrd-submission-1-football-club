@@ -8,7 +8,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class LeaguePresenter(
+internal class LeaguePresenter(
     private val view: LeagueView, private val manager: DataManager,
     private val androidScheduler: Scheduler = AndroidSchedulers.mainThread(),
     private val processScheduler: Scheduler = Schedulers.io()

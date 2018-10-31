@@ -19,7 +19,7 @@ class SportServiceFactory {
         return makeCountryService(context, client, makeGson())
     }
 
-    fun makeCountryService(context: Context, client: OkHttpClient, gson: Gson): SportService {
+    private fun makeCountryService(context: Context, client: OkHttpClient, gson: Gson): SportService {
         val retrofit = Retrofit.Builder()
             .baseUrl(context.getString(R.string.base_url))
             .client(client)
@@ -29,7 +29,7 @@ class SportServiceFactory {
         return retrofit.create(SportService::class.java)
     }
 
-    fun makeClientService(loggingInterceptor: HttpLoggingInterceptor, cache: Cache): OkHttpClient {
+    private fun makeClientService(loggingInterceptor: HttpLoggingInterceptor, cache: Cache): OkHttpClient {
         return OkHttpClient.Builder()
             .cache(cache)
             .addInterceptor { chain ->
@@ -41,7 +41,7 @@ class SportServiceFactory {
             .build()
     }
 
-    fun makeLoggingInterceptor(): HttpLoggingInterceptor {
+    private fun makeLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor()
             .setLevel(
                 if (BuildConfig.DEBUG) {
@@ -52,12 +52,12 @@ class SportServiceFactory {
             )
     }
 
-    fun makeGson(): Gson {
+    private fun makeGson(): Gson {
         return GsonBuilder()
             .create()
     }
 
-    fun makeCache(context: Context): Cache {
+    private fun makeCache(context: Context): Cache {
         val cacheSize = 10 * 1024 * 1024 // 10 MB
         return Cache(context.cacheDir, cacheSize.toLong())
     }
