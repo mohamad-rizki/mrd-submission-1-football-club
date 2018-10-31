@@ -7,15 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import com.dafian.android.submissionfootballclub.R
 import com.dafian.android.submissionfootballclub.data.entity.League
+import kotlinx.android.synthetic.main.row_league.view.*
 
 class LeagueAdapter(
     private val context: Context, private val leagueList: List<League>, private val listener : (League) -> Unit
 ) : RecyclerView.Adapter<LeagueAdapter.LeagueHolder>() {
 
-    class LeagueHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class LeagueHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItem(league: League, listener: (League) -> Unit) {
-
+            itemView.tv_league_name.text = league.strLeague
+            itemView.tv_league_sport.text = league.strSport
+            itemView.setOnClickListener {
+                listener(league)
+            }
         }
     }
 
@@ -25,6 +30,6 @@ class LeagueAdapter(
     override fun getItemCount(): Int = leagueList.size
 
     override fun onBindViewHolder(holder: LeagueHolder, position: Int) {
-
+        holder.bindItem(leagueList[position], listener)
     }
 }

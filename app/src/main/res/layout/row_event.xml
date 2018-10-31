@@ -1,7 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_normal">
+
+    <TextView
+        android:id="@+id/tv_event_date"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="@dimen/team_square_size"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/tv_event_vs">
+
+            <TextView
+                android:id="@+id/tv_event_home_score"
+                style="@style/TextAppearance.AppCompat.Display1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                tools:text="4" />
+
+            <TextView
+                android:id="@+id/tv_event_home_name"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_event_home_score"
+                android:textAlignment="center"
+                tools:text="@tools:sample/first_names" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_event_vs"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/label_vs" />
+
+        <RelativeLayout
+            android:layout_width="@dimen/team_square_size"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_event_vs">
+
+            <TextView
+                android:id="@+id/tv_event_away_score"
+                style="@style/TextAppearance.AppCompat.Display1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                tools:text="2" />
+
+            <TextView
+                android:id="@+id/tv_event_away_name"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_event_away_score"
+                android:textAlignment="center"
+                tools:text="@tools:sample/first_names" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>
