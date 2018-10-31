@@ -10,7 +10,7 @@ import com.dafian.android.submissionfootballclub.data.entity.League
 import kotlinx.android.synthetic.main.row_league.view.*
 
 class LeagueAdapter(
-    private val context: Context, private val leagueList: List<League>, private val listener : (League) -> Unit
+    private val leagueList: List<League>, private val listener : (League) -> Unit
 ) : RecyclerView.Adapter<LeagueAdapter.LeagueHolder>() {
 
     class LeagueHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -25,7 +25,7 @@ class LeagueAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LeagueHolder =
-        LeagueHolder(LayoutInflater.from(context).inflate(R.layout.row_league, parent, false))
+        LeagueHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_league, parent, false))
 
     override fun getItemCount(): Int = leagueList.size
 

@@ -21,7 +21,7 @@ class LeagueActivity : BaseActivity(), LeagueView {
     private lateinit var presenter: LeaguePresenter
 
     private val leagueList = mutableListOf<League>()
-    private val adapter = LeagueAdapter(this, leagueList) {
+    private val adapter = LeagueAdapter(leagueList) {
         startActivity<ScheduleTabActivity>("league" to it)
     }
 
@@ -31,6 +31,7 @@ class LeagueActivity : BaseActivity(), LeagueView {
 
         swipeRefreshLayout = findViewById(LeagueUI.idSwipeRefreshLayout)
         recyclerView = findViewById(LeagueUI.idRecyclerView)
+        recyclerView.adapter = adapter
 
         presenter = LeaguePresenter(this, manager)
 

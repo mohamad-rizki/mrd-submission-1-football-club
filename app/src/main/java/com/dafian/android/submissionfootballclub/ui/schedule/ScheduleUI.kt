@@ -2,6 +2,7 @@ package com.dafian.android.submissionfootballclub.ui.schedule
 
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
@@ -31,6 +32,7 @@ class ScheduleUI : AnkoComponent<ScheduleFragment> {
                     lparams(matchParent, wrapContent)
                     layoutManager = LinearLayoutManager(context)
                     itemAnimator = DefaultItemAnimator()
+                    addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
                 }
 
             }.lparams(matchParent, wrapContent)

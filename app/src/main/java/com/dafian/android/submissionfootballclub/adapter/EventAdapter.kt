@@ -10,7 +10,7 @@ import com.dafian.android.submissionfootballclub.data.entity.Event
 import kotlinx.android.synthetic.main.row_event.view.*
 
 class EventAdapter(
-    private val context: Context, private val eventList: List<Event>, private val listener: (Event) -> Unit
+    private val eventList: List<Event>, private val listener: (Event) -> Unit
 ) : RecyclerView.Adapter<EventAdapter.EventHolder>() {
 
     class EventHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,7 +28,7 @@ class EventAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventHolder =
-        EventHolder(LayoutInflater.from(context).inflate(R.layout.row_event, parent, false))
+        EventHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_event, parent, false))
 
     override fun getItemCount(): Int = eventList.size
 

@@ -22,8 +22,8 @@ class ScheduleTabActivity : BaseActivity() {
 
     private fun setupViewPager() {
         val scheduleTabAdapter = ScheduleTabAdapter(supportFragmentManager)
-        scheduleTabAdapter.addFragment(ScheduleFragment().newInstance("PAST"), "PAST")
-        scheduleTabAdapter.addFragment(ScheduleFragment().newInstance("NEXT"), "NEXT")
+        scheduleTabAdapter.addFragment(ScheduleFragment().newInstance("PAST", league.idLeague), "PAST")
+        scheduleTabAdapter.addFragment(ScheduleFragment().newInstance("NEXT", league.idLeague), "NEXT")
         pager_schedule.adapter = scheduleTabAdapter
         tabs.setupWithViewPager(pager_schedule)
     }
