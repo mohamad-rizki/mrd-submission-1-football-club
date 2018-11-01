@@ -31,7 +31,7 @@ class ScheduleFragment : BaseFragment(), ScheduleView {
         val fragment = ScheduleFragment()
         val bundle = Bundle()
         bundle.putString("type", type)
-        bundle.putString("leagueId", leagueId)
+        bundle.putString("league_id", leagueId)
         fragment.arguments = bundle
         return fragment
     }
@@ -39,7 +39,7 @@ class ScheduleFragment : BaseFragment(), ScheduleView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         type = arguments?.getString("type") ?: "PAST"
-        leagueId = arguments?.getString("leagueId") ?: "1445"
+        leagueId = arguments?.getString("league_id") ?: "1445"
         presenter = SchedulePresenter(this, manager)
     }
 

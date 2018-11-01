@@ -19,7 +19,7 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:layout_width="@dimen/team_square_size"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@+id/tv_event_vs">
 
@@ -51,7 +51,7 @@
             android:text="@string/label_vs" />
 
         <RelativeLayout
-            android:layout_width="@dimen/team_square_size"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/tv_event_vs">
 
