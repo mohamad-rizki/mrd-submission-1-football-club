@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/iv_event_home_logo"
-                    android:layout_alignBottom="@+id/tv_event_home_name"
+                    android:layout_alignBottom="@+id/iv_event_home_logo"
                     android:layout_toEndOf="@+id/iv_event_home_logo"
                     android:gravity="center"
                     tools:text="4" />
@@ -91,7 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/iv_event_away_logo"
-                    android:layout_alignBottom="@+id/tv_event_away_name"
+                    android:layout_alignBottom="@+id/iv_event_away_logo"
                     android:layout_toStartOf="@+id/iv_event_away_logo"
                     android:gravity="center"
                     tools:text="2" />

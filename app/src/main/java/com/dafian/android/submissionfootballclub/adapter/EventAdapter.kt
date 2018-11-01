@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.dafian.android.submissionfootballclub.R
 import com.dafian.android.submissionfootballclub.data.entity.Event
+import com.dafian.android.submissionfootballclub.util.formatDate
 import kotlinx.android.synthetic.main.row_event.view.*
 
 class EventAdapter(
@@ -17,7 +18,7 @@ class EventAdapter(
     class EventHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItem(event: Event) {
-            itemView.tv_event_date.text = event.dateEvent
+            itemView.tv_event_date.formatDate(event.dateEvent)
             itemView.tv_event_home_score.text = event.intHomeScore
             itemView.tv_event_home_name.text = event.strHomeTeam
             itemView.tv_event_away_score.text = event.intAwayScore
