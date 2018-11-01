@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/leagueFragment">
+
+    <fragment
+        android:id="@+id/leagueFragment"
+        android:name="com.dafian.android.submissionfootballclub.ui.league.LeagueFragment"
+        android:label="@string/title_league">
+
+        <action
+            android:id="@+id/action_leagueFragment_to_scheduleTabFragment"
+            app:destination="@id/scheduleTabFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/scheduleTabFragment"
+        android:name="com.dafian.android.submissionfootballclub.ui.schedule.ScheduleTabFragment"
+        android:label="@string/title_match_schedule"
+        tools:layout="@layout/fragment_schedule_tab">
+
+        <argument
+            android:name="league_id"
+            android:defaultValue="0" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailScheduleFragment"
+        android:name="com.dafian.android.submissionfootballclub.ui.schedule.detail.DetailScheduleFragment"
+        android:label="@string/title_detail"
+        tools:layout="@layout/fragment_schedule_detail">
+
+        <argument
+            android:name="event_id"
+            android:defaultValue="0" />
+
+    </fragment>
+
+</navigation>
