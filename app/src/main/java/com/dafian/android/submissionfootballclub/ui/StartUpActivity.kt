@@ -13,6 +13,6 @@ class StartUpActivity : BaseActivity() {
         val handler = Handler()
         handler.postDelayed({
             startActivity<MainActivity>()
-        }, 1500)
+        }, 600)
     }
 }
