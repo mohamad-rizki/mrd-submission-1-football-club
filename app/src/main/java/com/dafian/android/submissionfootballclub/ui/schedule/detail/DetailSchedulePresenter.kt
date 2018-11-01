@@ -2,6 +2,7 @@ package com.dafian.android.submissionfootballclub.ui.schedule.detail
 
 import com.dafian.android.submissionfootballclub.base.BasePresenter
 import com.dafian.android.submissionfootballclub.data.DataManager
+import com.dafian.android.submissionfootballclub.util.TeamType
 import com.dafian.android.submissionfootballclub.util.safeDispose
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -22,6 +23,17 @@ class DetailSchedulePresenter(
             .subscribeOn(processScheduler)
             .subscribe({
                 view.showDetailSchedule(it)
+            }, {
+                view.showError(it)
+            }))
+    }
+
+    fun getDetailTeam(teamId: String, teamType: TeamType) {
+        disposable.add(manager.searchTeamById(teamId)
+            .observeOn(androidScheduler)
+            .subscribeOn(processScheduler)
+            .subscribe({
+                view.showDetailTeam(it, teamType)
             }, {
                 view.showError(it)
             }))

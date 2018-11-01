@@ -13,8 +13,16 @@ class DataManager(private val service: SportService) {
     fun findLeagueAll(): Flowable<List<League>> {
         return service.findLeagueAll()
             .flatMap {
-                Observable.just(it.leagueList)
-                    .toFlowable(BackpressureStrategy.LATEST)
+                Flowable.just(it.leagueList)
+            }
+            .flatMap {
+                val list = mutableListOf<League>()
+                for (league in it) {
+                    if (league.strSport.contains("Soccer", true)) {
+                        list.add(league)
+                    }
+                }
+                Flowable.just(list)
             }
     }
 

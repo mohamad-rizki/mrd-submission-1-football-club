@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import com.dafian.android.submissionfootballclub.R
 import com.dafian.android.submissionfootballclub.base.BaseFragment
 import com.dafian.android.submissionfootballclub.data.entity.Event
+import com.dafian.android.submissionfootballclub.data.entity.Team
+import com.dafian.android.submissionfootballclub.util.TeamType
+import com.dafian.android.submissionfootballclub.util.loadUrl
 import kotlinx.android.synthetic.main.fragment_schedule_detail.*
 import timber.log.Timber
 
@@ -28,6 +31,15 @@ class DetailScheduleFragment : BaseFragment(), DetailScheduleView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadingData()
+    }
+
+    override fun showDetailTeam(team: Team, teamType: TeamType) {
+
+        if (teamType == TeamType.HOME) {
+            iv_event_home_logo.loadUrl(team.strTeamBadge)
+        } else if (teamType == TeamType.AWAY) {
+            iv_event_away_logo.loadUrl(team.strTeamBadge)
+        }
     }
 
     override fun showDetailSchedule(event: Event) {
@@ -54,6 +66,9 @@ class DetailScheduleFragment : BaseFragment(), DetailScheduleView {
         tv_event_away_forward.text = event.strAwayLineupForward
         tv_event_home_substitute.text = event.strHomeLineupSubstitutes
         tv_event_away_substitute.text = event.strAwayLineupSubstitutes
+
+        presenter.getDetailTeam(event.idHomeTeam, TeamType.HOME)
+        presenter.getDetailTeam(event.idAwayTeam, TeamType.AWAY)
     }
 
     override fun showError(throwable: Throwable) {
