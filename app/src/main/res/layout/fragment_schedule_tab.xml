@@ -22,7 +22,7 @@
             app:tabIndicatorHeight="@dimen/tab_divider_height"
             app:tabMode="fixed"
             app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabTextColor="@color/colorPrimary"/>
+            app:tabTextColor="@color/colorPrimary" />
 
     </android.support.design.widget.AppBarLayout>
 

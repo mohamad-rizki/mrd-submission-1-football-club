@@ -18,25 +18,29 @@ class DetailSchedulePresenter(
     private val disposable = CompositeDisposable()
 
     fun getDetailSchedule(eventId: String) {
-        disposable.add(manager.lookUpMatchByEvent(eventId)
-            .observeOn(androidScheduler)
-            .subscribeOn(processScheduler)
-            .subscribe({
-                view.showDetailSchedule(it)
-            }, {
-                view.showError(it)
-            }))
+        disposable.add(
+            manager.lookUpMatchByEvent(eventId)
+                .observeOn(androidScheduler)
+                .subscribeOn(processScheduler)
+                .subscribe({
+                    view.showDetailSchedule(it)
+                }, {
+                    view.showError(it)
+                })
+        )
     }
 
     fun getDetailTeam(teamId: String, teamType: TeamType) {
-        disposable.add(manager.searchTeamById(teamId)
-            .observeOn(androidScheduler)
-            .subscribeOn(processScheduler)
-            .subscribe({
-                view.showDetailTeam(it, teamType)
-            }, {
-                view.showError(it)
-            }))
+        disposable.add(
+            manager.searchTeamById(teamId)
+                .observeOn(androidScheduler)
+                .subscribeOn(processScheduler)
+                .subscribe({
+                    view.showDetailTeam(it, teamType)
+                }, {
+                    view.showError(it)
+                })
+        )
     }
 
     override fun onDestroy() {

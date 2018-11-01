@@ -105,6 +105,7 @@ class ScheduleFragment : BaseFragment(), ScheduleView {
             } else {
                 ScheduleType.NEXT
             }
-        , leagueId)
+            , leagueId
+        )
     }
 }

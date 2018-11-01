@@ -17,18 +17,19 @@ internal class LeaguePresenter(
     private val disposable = CompositeDisposable()
 
     fun getDataLeagueAll() {
-        disposable.add(manager.findLeagueAll()
-            .observeOn(androidScheduler)
-            .subscribeOn(processScheduler)
-            .subscribe({
-                if (it.isEmpty()) {
-                    view.showLeagueEmpty()
-                } else {
-                    view.showLeagueAll(it)
-                }
-            }, {
-                view.showError(it)
-            })
+        disposable.add(
+            manager.findLeagueAll()
+                .observeOn(androidScheduler)
+                .subscribeOn(processScheduler)
+                .subscribe({
+                    if (it.isEmpty()) {
+                        view.showLeagueEmpty()
+                    } else {
+                        view.showLeagueAll(it)
+                    }
+                }, {
+                    view.showError(it)
+                })
         )
     }
 
