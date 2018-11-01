@@ -8,14 +8,14 @@ import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
 
-class LeagueUI : AnkoComponent<LeagueActivity> {
+class LeagueUI : AnkoComponent<LeagueFragment> {
 
     companion object {
         const val idSwipeRefreshLayout = 1
         const val idRecyclerView = 2
     }
 
-    override fun createView(ui: AnkoContext<LeagueActivity>) = with(ui) {
+    override fun createView(ui: AnkoContext<LeagueFragment>) = with(ui) {
         verticalLayout {
             lparams(matchParent, matchParent)
 

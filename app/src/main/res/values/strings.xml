@@ -2,6 +2,10 @@
 
     <string name="app_name">Football Club</string>
 
+    <string name="title_league">League</string>
+    <string name="title_match_schedule">Match Schedule</string>
+    <string name="title_detail">Detail</string>
+
     <string name="label_vs">VS</string>
 
 </resources>

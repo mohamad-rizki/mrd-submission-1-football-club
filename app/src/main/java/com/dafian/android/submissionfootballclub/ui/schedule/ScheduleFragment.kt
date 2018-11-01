@@ -1,6 +1,5 @@
 package com.dafian.android.submissionfootballclub.ui.schedule
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
@@ -10,7 +9,6 @@ import android.view.ViewGroup
 import com.dafian.android.submissionfootballclub.adapter.EventAdapter
 import com.dafian.android.submissionfootballclub.base.BaseFragment
 import com.dafian.android.submissionfootballclub.data.entity.Event
-import com.dafian.android.submissionfootballclub.ui.schedule.detail.DetailScheduleActivity
 import com.dafian.android.submissionfootballclub.util.ScheduleType
 import com.dafian.android.submissionfootballclub.util.start
 import com.dafian.android.submissionfootballclub.util.stop
@@ -27,9 +25,7 @@ class ScheduleFragment : BaseFragment(), ScheduleView {
     private lateinit var presenter: SchedulePresenter
 
     private val eventList = mutableListOf<Event>()
-    private val adapter = EventAdapter(eventList) {
-        startActivity(Intent(activity, DetailScheduleActivity::class.java))
-    }
+    private val adapter = EventAdapter(eventList)
 
     fun newInstance(type: String, leagueId: String): ScheduleFragment {
         val fragment = ScheduleFragment()

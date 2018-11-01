@@ -3,17 +3,18 @@ package com.dafian.android.submissionfootballclub.ui.league
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.dafian.android.submissionfootballclub.adapter.LeagueAdapter
-import com.dafian.android.submissionfootballclub.base.BaseActivity
+import com.dafian.android.submissionfootballclub.base.BaseFragment
 import com.dafian.android.submissionfootballclub.data.entity.League
-import com.dafian.android.submissionfootballclub.ui.schedule.ScheduleTabActivity
 import com.dafian.android.submissionfootballclub.util.start
 import com.dafian.android.submissionfootballclub.util.stop
-import org.jetbrains.anko.setContentView
-import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.AnkoContext
 import timber.log.Timber
 
-class LeagueActivity : BaseActivity(), LeagueView {
+class LeagueFragment : BaseFragment(), LeagueView {
 
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var recyclerView: RecyclerView
@@ -21,20 +22,25 @@ class LeagueActivity : BaseActivity(), LeagueView {
     private lateinit var presenter: LeaguePresenter
 
     private val leagueList = mutableListOf<League>()
-    private val adapter = LeagueAdapter(leagueList) {
-        startActivity<ScheduleTabActivity>("league" to it)
-    }
+    private val adapter = LeagueAdapter(leagueList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        LeagueUI().setContentView(this)
+        presenter = LeaguePresenter(this, manager)
+    }
 
-        swipeRefreshLayout = findViewById(LeagueUI.idSwipeRefreshLayout)
-        recyclerView = findViewById(LeagueUI.idRecyclerView)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = LeagueUI().createView(AnkoContext.create(context!!, this, false))
+
+        swipeRefreshLayout = view.findViewById(LeagueUI.idSwipeRefreshLayout)
+        recyclerView = view.findViewById(LeagueUI.idRecyclerView)
         recyclerView.adapter = adapter
 
-        presenter = LeaguePresenter(this, manager)
+        return view
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initEvent()
         loadingData()
     }
